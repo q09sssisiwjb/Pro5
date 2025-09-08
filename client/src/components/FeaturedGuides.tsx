@@ -59,12 +59,18 @@ const FeaturedGuides = () => {
           {guides.map((guide) => (
             <div 
               key={guide.id}
-              className="flex-none w-80 bg-card border border-border/50 rounded-xl overflow-hidden hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 group cursor-pointer relative"
-              data-testid={`guide-card-${guide.id}`}
+              className="flex-none w-80 group cursor-pointer relative transition-all duration-300"
               style={{
-                boxShadow: '0 0 15px hsla(253, 100%, 72%, 0.1), 0 4px 20px rgba(0, 0, 0, 0.2)'
+                borderRadius: '12px',
+                padding: '1px',
+                background: 'linear-gradient(135deg, hsla(253, 100%, 72%, 0.3), hsla(315, 100%, 70%, 0.3), hsla(253, 100%, 72%, 0.2))',
+                boxShadow: '0 0 15px hsla(253, 100%, 72%, 0.2), 0 4px 20px rgba(0, 0, 0, 0.2)'
               }}
             >
+              <div 
+                className="bg-card rounded-[11px] overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 relative"
+                data-testid={`guide-card-${guide.id}`}
+              >
               {/* Card glow effect */}
               <div 
                 className="absolute inset-0 bg-gradient-to-br from-[hsla(253,100%,72%,0.05)] to-[hsla(315,100%,70%,0.05)] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl"
@@ -116,6 +122,7 @@ const FeaturedGuides = () => {
                     {guide.description}
                   </p>
                 </div>
+              </div>
               </div>
             </div>
           ))}

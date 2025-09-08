@@ -132,7 +132,17 @@ const HeroSlider = () => {
 
   return (
     <section className="relative w-full overflow-hidden" data-testid="hero-slider">
-      <div className="slider-container flex w-full">
+      {/* Glowing border container */}
+      <div 
+        className="relative"
+        style={{
+          borderRadius: '12px',
+          padding: '2px',
+          background: 'linear-gradient(45deg, hsla(253, 100%, 72%, 0.4), hsla(315, 100%, 70%, 0.4), hsla(253, 100%, 72%, 0.4))',
+          boxShadow: '0 0 20px hsla(253, 100%, 72%, 0.3), 0 0 40px hsla(315, 100%, 70%, 0.2)'
+        }}
+      >
+        <div className="slider-container flex w-full bg-background rounded-[10px] overflow-hidden">
         <div 
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -175,6 +185,7 @@ const HeroSlider = () => {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
 
