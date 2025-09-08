@@ -59,16 +59,40 @@ const FeaturedGuides = () => {
           {guides.map((guide) => (
             <div 
               key={guide.id}
-              className="flex-none w-80 bg-card border border-border/50 rounded-xl overflow-hidden hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 group cursor-pointer"
+              className="flex-none w-80 bg-card border border-border/50 rounded-xl overflow-hidden hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 group cursor-pointer relative"
               data-testid={`guide-card-${guide.id}`}
+              style={{
+                boxShadow: '0 0 15px hsla(253, 100%, 72%, 0.1), 0 4px 20px rgba(0, 0, 0, 0.2)'
+              }}
             >
+              {/* Card glow effect */}
+              <div 
+                className="absolute inset-0 bg-gradient-to-br from-[hsla(253,100%,72%,0.05)] to-[hsla(315,100%,70%,0.05)] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl"
+                style={{ 
+                  boxShadow: '0 0 25px hsla(253, 100%, 72%, 0.3), 0 0 40px hsla(315, 100%, 70%, 0.2)',
+                  filter: 'blur(1px)'
+                }}
+              ></div>
               <div className="aspect-[16/9] relative">
-                <img 
-                  src={guide.image}
-                  alt={guide.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  data-testid={`guide-image-${guide.id}`}
-                />
+                <div className="relative w-full h-full overflow-hidden">
+                  <img 
+                    src={guide.image}
+                    alt={guide.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 relative z-10"
+                    data-testid={`guide-image-${guide.id}`}
+                    style={{
+                      filter: 'drop-shadow(0 0 10px hsla(253, 100%, 72%, 0.2))'
+                    }}
+                  />
+                  {/* Image glow effect */}
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-60 transition-all duration-300"
+                    style={{ 
+                      background: 'radial-gradient(circle at center, hsla(253, 100%, 72%, 0.1), hsla(315, 100%, 70%, 0.05))',
+                      filter: 'blur(2px)'
+                    }}
+                  ></div>
+                </div>
                 <div className="absolute inset-0 bg-guide-overlay"></div>
                 <div className="absolute top-4 left-4">
                   <span 

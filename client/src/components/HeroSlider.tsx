@@ -139,13 +139,28 @@ const HeroSlider = () => {
         >
           {slides.map((slide, index) => (
             <div key={slide.id} className="slider-slide w-full flex-none">
-              <div className="aspect-[3/1] md:aspect-[5/1] w-full relative">
-                <img 
-                  src={slide.image}
-                  alt={slide.alt}
-                  className="w-full h-full object-cover"
-                  data-testid={`slide-image-${index}`}
-                />
+              <div className="aspect-[3/1] md:aspect-[5/1] w-full relative group">
+                {/* Image container with glow effect */}
+                <div className="relative w-full h-full">
+                  <img 
+                    src={slide.image}
+                    alt={slide.alt}
+                    className="w-full h-full object-cover transition-all duration-300"
+                    data-testid={`slide-image-${index}`}
+                    style={{
+                      filter: 'drop-shadow(0 0 20px hsla(253, 100%, 72%, 0.3))',
+                      borderRadius: '0px'
+                    }}
+                  />
+                  {/* Outer glow effect */}
+                  <div 
+                    className="absolute inset-0 opacity-50 transition-all duration-300"
+                    style={{ 
+                      background: 'linear-gradient(45deg, hsla(253, 100%, 72%, 0.1), hsla(315, 100%, 70%, 0.1))',
+                      boxShadow: '0 0 30px hsla(253, 100%, 72%, 0.2), inset 0 0 30px hsla(315, 100%, 70%, 0.1)'
+                    }}
+                  ></div>
+                </div>
                 <div className="absolute inset-0 bg-hero-overlay"></div>
                 <div className="absolute inset-0 flex items-center justify-center text-center p-4">
                   <div className="max-w-3xl animate-slide-in">
