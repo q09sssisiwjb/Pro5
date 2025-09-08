@@ -144,11 +144,12 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
       <div className="bg-card border border-border/50 rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto p-8 animate-slide-in">
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-purple-pink rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <span className="text-white text-xl font-bold">
+              {formData.username 
+                ? formData.username.slice(0, 2).toUpperCase() 
+                : 'VA'
+              }
+            </span>
           </div>
           <h2 className="text-2xl font-bold font-headline text-foreground">Welcome to Visionary AI</h2>
         </div>
