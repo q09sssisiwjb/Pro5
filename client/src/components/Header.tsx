@@ -45,6 +45,7 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-6" data-testid="navigation">
+            <a href="/neuravision" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-neuravision">NeuraVision AI</a>
             <a href="#tools" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-tools">Tools</a>
             <a href="#guides" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-guides">Guides</a>
             <a href="#gallery" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-gallery">Gallery</a>

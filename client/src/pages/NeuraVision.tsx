@@ -312,7 +312,7 @@ export default function NeuraVision() {
     <div className="min-h-screen bg-[#05060a] relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 animate-pulse"></div>
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"%3E%3Cdefs%3E%3CradialGradient id="a" cx="50%25" cy="50%25"%3E%3Cstop offset="0%25" style="stop-color:%235a1aa3;stop-opacity:0.1"/%3E%3Cstop offset="100%25" style="stop-color:%23000;stop-opacity:0"/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width="100%25" height="100%25" fill="url(%23a)"/%3E%3C/svg%3E')] opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-purple-900/10 via-transparent to-transparent opacity-50"></div>
       
       <div className="relative z-10">
         {/* Header */}
