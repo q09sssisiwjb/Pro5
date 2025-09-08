@@ -8,14 +8,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatButton from "@/components/ChatButton";
 import Home from "@/pages/Home";
-import NeuraVision from "@/pages/NeuraVision";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/neuravision" component={NeuraVision} />
       <Route component={NotFound} />
     </Switch>
   );
